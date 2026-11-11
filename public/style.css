@@ -1,0 +1,381 @@
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --accent: #f59e0b;
+    --dark: #0f172a;
+    --light: #f8fafc;
+    --gray-100: #f1f5f9;
+    --gray-200: #e2e8f0;
+    --gray-600: #475569;
+    --gray-900: #0f172a;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+    --shadow-md: 0 10px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.05);
+    --shadow-lg: 0 20px 35px -10px rgba(37, 99, 235, 0.15);
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(135deg, #f0f4ff 0%, #f8fafc 100%);
+    color: var(--gray-900);
+    margin: 0;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 45px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: var(--shadow-md);
+}
+
+/* Header & Banner Utama */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--dark);
+    text-align: center;
+    margin-bottom: 10px;
+    letter-spacing: -0.025em;
+    background: linear-gradient(to right, #1e40af, #2563eb, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.container > p {
+    text-align: center;
+    color: var(--gray-600);
+    font-size: 1.1rem;
+    margin-bottom: 35px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-top: 50px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+h2::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 24px;
+    background-color: var(--primary);
+    border-radius: 4px;
+}
+
+/* Tombol Aksi Utama */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: var(--shadow-lg);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px -5px rgba(37, 99, 235, 0.35);
+    color: white;
+}
+
+/* Grid Card Paket Rental (Elevated Modern Cards) */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    margin-bottom: 45px;
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid var(--gray-200);
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.08);
+    border-color: #93c5fd;
+}
+
+.card h3 {
+    font-size: 1.35rem;
+    color: var(--dark);
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.card p {
+    color: var(--gray-600);
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+/* Tabel Daftar Pemesanan ala SaaS Dashboard */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 15px;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--gray-200);
+    background: white;
+    box-shadow: var(--shadow-sm);
+}
+
+th, td {
+    padding: 16px 20px;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+th {
+    background-color: var(--gray-100);
+    color: var(--gray-900);
+    font-weight: 700;
+    border-bottom: 2px solid var(--gray-200);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+}
+
+td {
+    border-bottom: 1px solid var(--gray-200);
+    color: var(--gray-600);
+    font-weight: 500;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover td {
+    background-color: #fafbfc;
+    color: var(--gray-900);
+}
+
+/* Tombol Aksi Tabel (Edit & Hapus) */
+
+/* Memperbaiki posisi tombol Edit dan Hapus */
+td:last-child {
+    white-space: nowrap;
+    min-width: 160px;
+}
+
+td:last-child .btn-edit,
+td:last-child .btn-hapus {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+
+    padding: 8px 14px;
+    margin: 0 6px 0 0;
+
+    border-radius: 8px;
+    text-decoration: none;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+/* Warna tombol Edit */
+td:last-child .btn-edit {
+    background-color: #fef3c7;
+    color: #d97706;
+}
+
+/* Warna tombol Hapus */
+td:last-child .btn-hapus {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+
+/* Efek hover */
+td:last-child .btn-edit:hover {
+    background-color: #fde68a;
+}
+
+td:last-child .btn-hapus:hover {
+    background-color: #fecaca;
+}
+
+
+/* Footer Profesional */
+footer {
+    text-align: center;
+    margin-top: 60px;
+    padding: 30px;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: white;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+}
+
+footer p {
+    margin: 6px 0;
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+footer p:first-child {
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 1.05rem;
+    letter-spacing: 0.025em;
+}
+
+/* =====================================
+   BACKGROUND MOBIL UNTUK SEMUA HALAMAN
+   ===================================== */
+
+body {
+    font-family: 'Plus Jakarta Sans', 'Segoe UI', Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            rgba(15, 23, 42, 0.60),
+            rgba(15, 23, 42, 0.70)
+        ),
+        url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1920&auto=format&fit=crop');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    margin: 0;
+    padding: 40px 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Container halaman utama */
+.container {
+    background: rgba(255, 255, 255, 0.93);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Form tambah pemesanan dan form edit */
+form {
+    background: rgba(255, 255, 255, 0.96);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+}
+
+/* Input form */
+input,
+select,
+textarea {
+    max-width: 100%;
+    box-sizing: border-box;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 10px 12px;
+}
+
+/* Efek saat input dipilih */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* Tampilan HP */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================
+   BACKGROUND MOBIL - HALAMAN FORM PEMESANAN
+   ========================================== */
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    background-image:
+        linear-gradient(
+            rgba(15, 23, 42, 0.55),
+            rgba(15, 23, 42, 0.65)
+        ),
+        url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1920&auto=format&fit=crop") !important;
+
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    background-color: #0f172a;
+}
+
+/* Form tetap putih agar mudah dibaca */
+.card,
+.card-body,
+form {
+    background-color: rgba(255, 255, 255, 0.97);
+}
+
+/* Header form tetap biru */
+.card-header {
+    background-color: #0d6efd;
+    color: #ffffff;
+}
+
+/* Pastikan halaman cukup tinggi untuk menampilkan background */
+body {
+    min-height: 100vh;
+}
